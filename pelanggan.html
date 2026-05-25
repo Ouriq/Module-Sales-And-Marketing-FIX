@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manajemen Data Pelanggan – Indofood</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="pelanggan.css" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item active">
+          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="#" class="nav-item">
+          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="#" class="nav-item">
+          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="#" class="nav-item">
+          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="#" class="nav-item">
+          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link"><i class='bx bx-help-circle'></i> Help Center</a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search employee or data...">
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn"><i class='bx bx-cog'></i></button>
+          <button class="icon-btn"><i class='bx bx-bell'></i></button>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Pengguna</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1>Manajemen Data Pelanggan</h1>
+        <p class="subtitle">Kelola data distributor dan pelanggan</p>
+      </div>
+
+      <div class="action-bar">
+        <button type="button" class="btn-add" id="btnAddData">
+          Tambah Data <i class='bx bx-plus'></i>
+        </button>
+      </div>
+
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID Distributor</th>
+                <th>Nama Perusahaan</th>
+                <th>Kategori Produk</th>
+                <th>Tier</th>
+                <th>PIC</th>
+                <th>No. Telepon</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td>ID-001-202-01</td>
+                <td>PT SuperIndo</td>
+                <td>Indomie Goreng</td>
+                <td>Gold</td>
+                <td>Khairul</td>
+                <td>628123456789</td>
+              </tr>
+              <tr>
+                <td>ID-002-202-02</td>
+                <td>PT Indomaret</td>
+                <td>Indomie Soto</td>
+                <td>Platinum</td>
+                <td>Ical</td>
+                <td>628987654321</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <button type="button" class="page-btn active">1</button>
+        <button type="button" class="page-btn">2</button>
+        <button type="button" class="page-btn">3</button>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalAddData">
+    <div class="modal-box modal-large">
+      <div class="modal-header-blue">
+        <h2>Tambah Distributor Baru</h2>
+      </div>
+
+      <form id="formAddData">
+        <div class="form-top-section">
+          <div class="form-column">
+            <div class="form-group">
+              <label>ID Distributor</label>
+              <input type="text" id="inputID" required placeholder="ID-000-000-00">
+            </div>
+            <div class="form-group">
+              <label>Kategori Produk</label>
+              <select id="inputKategori" required>
+                <option value="" disabled selected>Pilih Kategori</option>
+                <option value="Indomie Goreng">Indomie Goreng</option>
+                <option value="Indomie Soto">Indomie Soto</option>
+                <option value="Indomie Kari">Indomie Kari</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>PIC</label>
+              <select id="inputPIC" required>
+                <option value="" disabled selected>Pilih PIC</option>
+                <option value="Khairul">Khairul</option>
+                <option value="Ical">Ical</option>
+                <option value="Thoriq">Thoriq</option>
+                <option value="Naya">Naya</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>No. Telepon</label>
+              <input type="text" id="inputTelp" required placeholder="62xx">
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="form-group">
+              <label>Nama Perusahaan</label>
+              <input list="perusahaanList" id="inputNama" required placeholder="Pilih/Ketik Nama Perusahaan">
+              <datalist id="perusahaanList">
+                <option value="PT SuperIndo">
+                <option value="PT Selalu Jaya">
+                <option value="PT Indomaret">
+                <option value="PT Alfamart">
+              </datalist>
+            </div>
+            <div class="form-group">
+              <label>Tier</label>
+              <select id="inputTier" required>
+                <option value="" disabled selected>Pilih Tier</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Deskripsi/Syarat & Ketentuan</label>
+              <textarea id="inputDeskripsi" placeholder="Berikan Deskripsi atau Syarat & Ketentuan" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-bottom-section">
+          <h3 class="section-title">Periode</h3>
+          <div class="date-row">
+            <div class="form-group">
+              <label>Tanggal Mulai</label>
+              <input type="date" id="inputMulai" required>
+            </div>
+            <div class="form-group">
+              <label>Tanggal Berakhir</label>
+              <input type="date" id="inputBerakhir" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn-draft" id="btnDraft">Draft</button>
+          <button type="submit" class="btn-simpan">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="pelanggan.js"></script>
+</body>
+</html>

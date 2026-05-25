@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – Indofood Sales Marketing</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active">
+          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="#" class="nav-item">
+          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="#" class="nav-item">
+          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="#" class="nav-item">
+          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="#" class="nav-item">
+          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link"><i class='bx bx-help-circle'></i> Help Center</a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search employee or data...">
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn"><i class='bx bx-cog'></i></button>
+          <button class="icon-btn"><i class='bx bx-bell'></i></button>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1 id="greetingText">Selamat Datang, Nilam</h1>
+        <p class="date-text"><span id="currentDate">Senin, 24 Mei 2026</span> &nbsp;|&nbsp; Sales Marketing System Dashboard</p>
+      </div>
+
+      <div class="dashboard-grid">
+        
+        <div class="card card-blue card-income">
+          <div class="card-icon-blue"><i class='bx bx-money-withdraw'></i></div>
+          <p class="card-title-light">Total Income</p>
+          <h2 class="card-value-light">Rp 1.413.087,00</h2>
+        </div>
+
+        <div class="card card-karton">
+          <div class="karton-header">
+            <div class="card-icon-light"><i class='bx bx-package'></i></div>
+            <span class="badge-success">+12.13%</span>
+          </div>
+          <p class="card-title-dark">Total Karton Terjual</p>
+          <h2 class="card-value-dark">1.314</h2>
+        </div>
+
+        <div class="card card-chart-bar">
+          <div class="card-header-flex">
+            <h3 class="card-title-bold">Pendapatan Per Bulan</h3>
+            <select class="filter-select">
+              <option>This Year</option>
+              <option>Last Year</option>
+            </select>
+          </div>
+          <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+          </div>
+        </div>
+
+        <div class="card card-varian">
+          <div class="card-header-flex">
+            <h3 class="card-title-bold">Varian Terlaris</h3>
+            <select class="filter-select">
+              <option>Today</option>
+              <option>This Week</option>
+            </select>
+          </div>
+          
+          <div class="varian-content">
+            <ul class="varian-legend">
+              <li><span class="dot dot-blue"></span> Mie Goreng</li>
+              <li><span class="dot dot-green"></span> Mie Soto</li>
+              <li><span class="dot dot-orange"></span> Mie Kari Ayam</li>
+            </ul>
+            
+            <div class="bubble-chart">
+              <div class="bubble bubble-blue"><span>60%</span></div>
+              <div class="bubble bubble-green"><span>25%</span></div>
+              <div class="bubble bubble-orange"><span>15%</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
