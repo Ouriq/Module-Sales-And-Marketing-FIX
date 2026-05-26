@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tracking Kampanye Marketing – Indofood</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="kampanye.css" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="sales.html" class="nav-item">
+          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="promo.html" class="nav-item">
+          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="kampanye.html" class="nav-item active">
+          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="#" class="nav-item">
+          <img src="marketicon.png" alt="Market" class="nav-icon"> Market Intelligence
+        </a>
+        <a href="#" class="nav-item">
+          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search promo...">
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn"><i class='bx bx-cog'></i></button>
+          <button class="icon-btn"><i class='bx bx-bell'></i></button>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1>Tracking Kampanye Marketing</h1>
+      </div>
+
+      <div class="card budget-card">
+        <div class="budget-icon">
+          <img src="dompeticon.png" alt="Wallet" class="custom-stat-img">
+        </div>
+        <div class="budget-info">
+          <p class="budget-label">Total Budget Terpakai</p>
+          <div class="budget-amounts">
+            <h2>Rp 1.2 M</h2>
+            <span class="budget-total">/ 2.5 M</span>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 48%;"></div>
+            </div>
+            <div class="progress-labels">
+              <span>48%</span>
+              <span class="text-muted">Sisa Rp 1.3 M</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <button class="btn-add-kampanye" id="btnTambahKampanye">
+          Tambah Kampanye Baru <i class='bx bx-plus'></i>
+        </button>
+        <button class="btn-filter">
+          Filter <i class='bx bx-filter'></i>
+        </button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="card stat-card">
+          <div class="stat-icon icon-blue">
+            <img src="aktificon.png" alt="Aktif" class="custom-stat-img">
+          </div>
+          <div class="stat-text">
+            <p class="stat-title">Kampanye Aktif</p>
+            <h3>1</h3>
+            <span class="stat-desc text-blue">Sedang berjalan</span>
+          </div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-icon icon-yellow">
+            <img src="drafticon.png" alt="Draft" class="custom-stat-img">
+          </div>
+          <div class="stat-text">
+            <p class="stat-title">Draft</p>
+            <h3>1</h3>
+            <span class="stat-desc text-yellow">Belum dipublikasi</span>
+          </div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-icon icon-green">
+            <img src="selesaiicon.png" alt="Selesai" class="custom-stat-img">
+          </div>
+          <div class="stat-text">
+            <p class="stat-title">Selesai</p>
+            <h3>0</h3>
+            <span class="stat-desc text-green">Selesai dijalankan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-responsive">
+          <table class="kampanye-table">
+            <thead>
+              <tr>
+                <th>Nama Kampanye</th>
+                <th>Media</th>
+                <th>Anggaran</th>
+                <th>Status</th>
+                <th>Progress Hari</th>
+              </tr>
+            </thead>
+            <tbody id="kampanyeTableBody">
+              <tr>
+                <td>
+                  <div class="kampanye-name-cell">
+                    <div class="media-icon bg-gray"><i class='bx bx-tv'></i></div>
+                    <div>
+                      <p class="k-title">Iklan Indomie Ramadhan</p>
+                      <p class="k-subtitle">Campaign TV - Ramadhan</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="font-bold">TV</td>
+                <td class="font-bold">Rp. 500.000.000</td>
+                <td><span class="status-pill aktif">Aktif</span></td>
+                <td>
+                  <div class="mini-progress">
+                    <span class="font-bold">45 hari</span>
+                    <div class="mini-bar-bg"><div class="mini-bar-fill bg-green" style="width: 70%;"></div></div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="kampanye-name-cell">
+                    <div class="media-icon bg-dark"><i class='bx bxl-tiktok'></i></div>
+                    <div>
+                      <p class="k-title">Tiktok Challenge #IndomieSeru</p>
+                      <p class="k-subtitle">Campaign Tiktok</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="font-bold">Tiktok</td>
+                <td class="font-bold">Rp. 800.000.000</td>
+                <td><span class="status-pill draft">Draft</span></td>
+                <td>
+                  <div class="mini-progress">
+                    <span class="font-bold">0 hari</span>
+                    <div class="mini-bar-bg"><div class="mini-bar-fill bg-gray" style="width: 0%;"></div></div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalKampanye">
+    <div class="modal-box modal-large">
+      <div class="modal-header-blue">
+        <h2>Form Tambah Kampanye Marketing</h2>
+      </div>
+
+      <form id="formKampanye">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nama Kampanye</label>
+            <input type="text" id="inputNama" placeholder="Ketik Nama Kampanye" required>
+          </div>
+          <div class="form-group">
+            <label>Sub-Nama Kampanye</label>
+            <input type="text" id="inputSubNama" placeholder="Ketik Sub-Nama Kampanye" required>
+          </div>
+          
+          <div class="form-group">
+            <label>Media Kampanye</label>
+            <select id="inputMedia" required>
+              <option value="" disabled selected>Pilih Kategori</option>
+              <option value="Tiktok">TikTok</option>
+              <option value="Instagram Reels">Instagram Reels</option>
+              <option value="TV">Televisi (TV)</option>
+              <option value="YouTube Ads">YouTube Ads</option>
+              <option value="Billboard">Billboard</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Anggaran</label>
+            <input type="text" id="inputAnggaran" placeholder="Ketik nominal anggaran" required>
+          </div>
+          
+          <div class="form-group full-width">
+            <label>Deskripsi/Syarat & Ketentuan</label>
+            <textarea id="inputDeskripsi" placeholder="Berikan Detail, Deskripsi atau Syarat & Ketentuan" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="section-periode">
+          <h3>Periode</h3>
+          <div class="date-grid">
+            <div class="form-group">
+              <label>Tanggal Mulai</label>
+              <input type="date" id="inputMulai" required>
+            </div>
+            <div class="form-group">
+              <label>Tanggal Berakhir</label>
+              <input type="date" id="inputAkhir" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-draft-modal" id="btnDraft">Draft</button>
+          <button type="submit" class="btn-simpan-modal">Simpan</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="kampanye.js"></script>
+</body>
+</html>

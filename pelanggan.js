@@ -80,6 +80,32 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
     modal.classList.remove('active');
     alert(`Berhasil: Data distributor ${nama} (ID: ${idDist}) telah disimpan!`);
+
+    sessionStorage.setItem(
+      'selectedCustomer',
+      JSON.stringify({ id: idDist, nama, tier, pic, telp })
+    );
+  });
+
+  tableBody.addEventListener('click', (e) => {
+    const row = e.target.closest('tr');
+    if (!row) return;
+
+    const cells = row.querySelectorAll('td');
+    if (cells.length < 6) return;
+
+    sessionStorage.setItem(
+      'selectedCustomer',
+      JSON.stringify({
+        id: cells[0].textContent.trim(),
+        nama: cells[1].textContent.trim(),
+        kategori: cells[2].textContent.trim(),
+        tier: cells[3].textContent.trim(),
+        pic: cells[4].textContent.trim(),
+        telp: cells[5].textContent.trim(),
+      })
+    );
+    window.location.href = 'sales.html';
   });
 
   document.getElementById('logoutBtn').addEventListener('click', () => {

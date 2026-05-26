@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master Promo – Indofood</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="promo.css" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="sales.html" class="nav-item">
+          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="promo.html" class="nav-item active">
+          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="kampanye.html" class="nav-item">
+          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="#" class="nav-item">
+          <img src="marketicon.png" alt="Market" class="nav-icon"> Market Intelligence
+        </a>
+        <a href="#" class="nav-item">
+          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search data...">
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn"><i class='bx bx-cog'></i></button>
+          <button class="icon-btn"><i class='bx bx-bell'></i></button>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1>Master Promo</h1>
+        <p class="subtitle">Kelola aturan promosi, diskon, dan kampanye penjualan.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="card stat-card">
+          <p class="stat-label">Total Promo</p>
+          <div class="stat-value">20 <span class="stat-unit">Promo</span></div>
+        </div>
+        <div class="card stat-card">
+          <p class="stat-label">Promo Aktif</p>
+          <div class="stat-value text-green">4 <span class="stat-unit">Berjalan</span></div>
+        </div>
+        <div class="card stat-card">
+          <p class="stat-label">Draft</p>
+          <div class="stat-value text-blue">8 <span class="stat-unit">Menunggu</span></div>
+        </div>
+        <div class="card stat-card">
+          <p class="stat-label">Berakhir Bulan Ini</p>
+          <div class="stat-value text-red">14 <span class="stat-unit">Promo</span></div>
+        </div>
+      </div>
+
+      <div class="action-bar">
+        <button class="btn-add-promo" id="openModalBtn">
+          Add Promo <i class='bx bx-plus'></i>
+        </button>
+        <button class="btn-filter">
+          Filter <i class='bx bx-filter'></i>
+        </button>
+      </div>
+
+      <div class="card table-card">
+        <div class="table-responsive">
+          <table class="promo-table">
+            <thead>
+              <tr>
+                <th>Kode</th>
+                <th>Nama Promo</th>
+                <th>Diskon</th>
+                <th>Total Digunakan</th>
+                <th>Status</th>
+                <th>Sisa Hari</th>
+              </tr>
+            </thead>
+            <tbody id="promoTableBody">
+              <tr>
+                <td>LEBARAN25</td>
+                <td>Diskon Lebaran 25%</td>
+                <td><span class="badge-discount-green">20%</span></td>
+                <td>365/500</td>
+                <td><span class="status-pill aktif">Aktif</span></td>
+                <td class="text-green-bold">45 hari</td>
+              </tr>
+              <tr>
+                <td>FLASHKAT20</td>
+                <td>Flash Sale 20%</td>
+                <td><span class="badge-discount-yellow">50%</span></td>
+                <td>-</td>
+                <td><span class="status-pill draft">Draft</span></td>
+                <td>0 hari</td>
+              </tr>
+              <tr>
+                <td>NEWYEAR50</td>
+                <td>Tahun Baru 50%</td>
+                <td><span class="badge-discount-green">13%</span></td>
+                <td>3000/3500</td>
+                <td><span class="status-pill non-aktif">Non Aktif</span></td>
+                <td class="text-red-bold">0 hari</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="modalPromo">
+    <div class="modal-box modal-large">
+      <div class="modal-header-blue">
+        <h2>Form Tambah/Edit Promo</h2>
+      </div>
+
+      <form id="formPromo">
+        <div class="form-grid">
+          <div class="form-column">
+            <div class="form-group">
+              <label>Kode Promo</label>
+              <input type="text" id="promoKode" placeholder="Ketik Kode Promo" required>
+            </div>
+            <div class="form-group">
+              <label>Pilih Produk</label>
+              <select id="promoProduk" required>
+                <option value="" disabled selected>Pilih Varian Indomie</option>
+                <option value="Indomie Goreng">Indomie Goreng</option>
+                <option value="Indomie Soto">Indomie Soto</option>
+                <option value="Indomie Kari">Indomie Kari</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Diskon %</label>
+              <select id="promoDiskon" required>
+                <option value="" disabled selected>Pilih Diskon</option>
+                <option value="10">10%</option>
+                <option value="20">20%</option>
+                <option value="50">50%</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Kuota Penggunaan</label>
+              <input type="number" id="promoKuota" placeholder="Ketik kuota penggunaan" required>
+            </div>
+          </div>
+
+          <div class="form-column">
+            <div class="form-group">
+              <label>Nama Promo</label>
+              <input type="text" id="promoNama" placeholder="Ketik Nama Promo" required>
+            </div>
+            <div class="form-group">
+              <label>Min. Pembelian</label>
+              <input type="text" id="promoMinBeli" placeholder="Pilih min. pembelian" required>
+            </div>
+            <div class="form-group">
+              <label>Deskripsi/Syarat & Ketentuan</label>
+              <textarea id="promoDesc" placeholder="Berikan Deskripsi atau Syarat & Ketentuan" rows="5"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-periode">
+          <h3>Periode</h3>
+          <div class="date-grid">
+            <div class="form-group">
+              <label>Tanggal Mulai</label>
+              <input type="date" id="promoMulai" required>
+            </div>
+            <div class="form-group">
+              <label>Tanggal Berakhir</label>
+              <input type="date" id="promoAkhir" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-draft-modal" id="closeModal">Draft</button>
+          <button type="submit" class="btn-aktifkan">Aktifkan Promo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="promo.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sales Order – Indofood</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="sales.css" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="sales.html" class="nav-item active">
+          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="promo.html" class="nav-item">
+          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="kampanye.html" class="nav-item">
+          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="#" class="nav-item">
+          <img src="marketicon.png" alt="Market" class="nav-icon"> <span>Market Intelligence</span>
+        </a>
+        <a href="#" class="nav-item">
+          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search data...">
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn"><i class='bx bx-cog'></i></button>
+          <button class="icon-btn"><i class='bx bx-bell'></i></button>
+          <div class="user-profile">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1>Sales Order</h1>
+        <p class="subtitle">Kelola pesanan baru dan validasi ketersediaan stok distributor.</p>
+      </div>
+
+      <div class="sales-grid">
+        
+        <div class="sales-left">
+          
+          <div class="card info-card">
+            <div class="card-header-flex">
+              <h3><i class='bx bx-group'></i> Informasi Pelanggan</h3>
+              <a href="pelanggan.html" class="text-link">Ubah Pelanggan</a>
+            </div>
+            
+            <div class="customer-banner">
+              <div class="customer-profile">
+                <div class="avatar-circle">MJ</div>
+                <div class="customer-details">
+                  <h4>PT SuperIndo</h4>
+                  <p>ID: DST-001 <span class="divider-dot">•</span> Khairul (081310101782)</p>
+                </div>
+              </div>
+              <div class="tier-badge">Platinum Tier</div>
+            </div>
+          </div>
+
+          <div class="card order-card">
+            <div class="card-header-flex">
+              <h3>Detail Pesanan (SKU)</h3>
+              <a href="#" class="text-link">Cari Produk</a>
+            </div>
+
+            <div class="table-header-pill">
+              <div class="col-produk">Produk</div>
+              <div class="col-harga">Harga/Karton</div>
+              <div class="col-qty">Kuantitas</div>
+              <div class="col-sub">Subtotal</div>
+            </div>
+
+            <div class="product-list" id="productList">
+              <div class="product-item" data-price="85000">
+                <div class="col-produk prod-info">
+                  <div class="prod-img-wrapper">
+                    <img src="gorengicon.png" alt="Indomie Goreng" class="prod-img-raw">
+                  </div>
+                  <div>
+                    <h4>Indomie Goreng</h4>
+                    <p class="sku">IDN - GRG</p>
+                    <p class="status-ok">Tersedia (Stok: 1500)</p>
+                  </div>
+                </div>
+                <div class="col-harga prod-price">Rp 85.000</div>
+                <div class="col-qty">
+                  <div class="qty-stepper">
+                    <button class="btn-min"><i class='bx bx-minus'></i></button>
+                    <input type="number" class="input-qty" value="500" min="1" max="1500" readonly>
+                    <button class="btn-plus"><i class='bx bx-plus'></i></button>
+                  </div>
+                </div>
+                <div class="col-sub prod-subtotal">Rp 42.500.000</div>
+              </div>
+
+              <div class="product-item" data-price="82000">
+                <div class="col-produk prod-info">
+                  <div class="prod-img-wrapper">
+                    <img src="sotoicon.png" alt="Indomie Soto" class="prod-img-raw">
+                  </div>
+                  <div>
+                    <h4>Indomie Kuah Soto</h4>
+                    <p class="sku">IDN - STO</p>
+                    <p class="status-warn">Pre - Order</p>
+                  </div>
+                </div>
+                <div class="col-harga prod-price">Rp 82.000</div>
+                <div class="col-qty">
+                  <div class="qty-stepper">
+                    <button class="btn-min"><i class='bx bx-minus'></i></button>
+                    <input type="number" class="input-qty" value="200" min="1" readonly>
+                    <button class="btn-plus"><i class='bx bx-plus'></i></button>
+                  </div>
+                </div>
+                <div class="col-sub prod-subtotal">Rp 16.400.000</div>
+              </div>
+            </div>
+
+            <button class="btn-add-row">
+              <i class='bx bx-plus-circle'></i> Tambah Baris Baru
+            </button>
+          </div>
+
+        </div>
+
+        <div class="sales-right">
+          <div class="card summary-card">
+            <h3>Ringkasan Pesanan</h3>
+            <p class="estimasi-text">Estimasi pengiriman: 25 Apr 2026</p>
+
+            <div class="summary-breakdown">
+              <div class="summary-row">
+                <span id="labelItemCount">Subtotal (2 Item)</span>
+                <strong id="valSubtotal">Rp 58.900.000</strong>
+              </div>
+
+              <div class="discount-box">
+                <div class="discount-header">
+                  <span class="disc-title">🎟️ Diskon Tier</span>
+                  <strong class="disc-amount" id="valDiscount">-Rp 2.945.000</strong>
+                </div>
+                <p class="disc-desc">Platinum Member (5%)</p>
+              </div>
+
+              <div class="summary-row">
+                <span>PPN (11%)</span>
+                <strong id="valPpn">Rp 6.155.050</strong>
+              </div>
+              <div class="summary-row">
+                <span>Biaya Pengiriman</span>
+                <strong>Gratis</strong>
+              </div>
+            </div>
+
+            <div class="total-box">
+              <p>Total Pembayaran</p>
+              <h2 id="valGrandTotal">RP 62.110.050</h2>
+            </div>
+
+            <div class="summary-actions">
+              <button class="btn-primary-full">Proses & Validasi SO</button>
+              <div class="btn-group-half">
+                <button class="btn-secondary-half">Simpan Draft</button>
+                <button class="btn-secondary-half">PDF</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="sales.js"></script>
+</body>
+</html>
