@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market Intelligence – Indofood</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="css/market.css?v=2" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/images/logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="assets/images/dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="assets/images/dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="sales.html" class="nav-item">
+          <img src="assets/images/soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="promo.html" class="nav-item">
+          <img src="assets/images/mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="kampanye.html" class="nav-item">
+          <img src="assets/images/speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="market.html" class="nav-item active">
+          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> <span>Market Intelligence</span>
+        </a>
+        <a href="laporan.html" class="nav-item">
+          <img src="assets/images/laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box" style="visibility: hidden;">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search data...">
+        </div>
+        <div class="topbar-right">
+          <div class="settings-wrapper">
+            <button class="icon-btn" id="btnSettingsToggle">
+              <i class='bx bx-cog'></i>
+            </button>
+
+            <div class="settings-popup" id="settingsPopup">
+              <h3 class="settings-title">Pengaturan</h3>
+              
+              <div class="settings-list">
+                <a href="profil.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-user'></i></div>
+                  <div class="s-text">
+                    <h4>Profil Saya</h4>
+                    <p>Kelola informasi akun Anda</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+                
+                
+
+                
+
+                <a href="keamanan.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-lock-alt'></i></div>
+                  <div class="s-text">
+                    <h4>Keamanan</h4>
+                    <p>Ubah password & keamanan akun</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+
+                <hr class="s-divider">
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-globe'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Bahasa</h4>
+                  </div>
+                  <div class="s-action-text">Indonesia <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-sun'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Tema</h4>
+                  </div>
+                  <div class="s-action-text">Light <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <hr class="s-divider">
+
+                <div class="settings-item logout-item" id="settingsLogoutBtn">
+                  <div class="s-icon"><i class='bx bx-log-out'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Logout</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <!-- WRAPPER NOTIFIKASI -->
+          <div class="notification-wrapper">
+            <button class="icon-btn" id="btnNotifToggle">
+              <i class='bx bx-bell'></i>
+            </button>
+
+            <!-- KOTAK POPUP NOTIFIKASI -->
+            <div class="notif-popup" id="notifPopup">
+              <div class="notif-header">
+                <h3>Notifikasi</h3>
+                <a href="#" class="notif-mark-read">Mark all as read</a>
+              </div>
+              <div class="notif-list">
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #E0E7FF; color: #4F46E5;">
+                    <i class='bx bx-shopping-bag'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Pesanan baru #SO-250524</h4>
+                    <p>Dari Toko Maju Jaya</p>
+                    <span class="notif-time">5 menit yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+              </div>
+              <div class="notif-footer">
+                <a href="#" class="notif-view-all">Lihat semua notifikasi</a>
+                <i class='bx bx-chevron-right'></i>
+              </div>
+            </div>
+          </div>
+          <!-- END WRAPPER NOTIFIKASI -->
+          <a href="profil.html" class="user-profile" style="text-decoration: none; color: inherit;">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </a>
+        </div>
+      </header>
+
+      <div id="marketDashboardView">
+        <div class="page-header">
+          <h1>Market Intelligence</h1>
+          <p class="subtitle" style="font-weight: 500; margin-top: 4px;">Database analitik - Diperbarui 26 Mei 2026</p>
+        </div>
+
+      <div class="market-summary">
+        <div class="card summary-box">
+          <p class="box-title">Total Pesaing</p>
+          <div class="box-value"><span class="large-number blue-text">6</span> <span class="small-text">Pesaing</span></div>
+        </div>
+        <div class="card summary-box">
+          <p class="box-title">Harga rata-rata/karton</p>
+          <h2 class="box-value blue-text">Rp 85.000</h2>
+        </div>
+        <div class="card summary-box">
+          <p class="box-title">Harga rata-rata terendah</p>
+          <h2 class="box-value green-text">Rp 75.000</h2>
+        </div>
+        <div class="card summary-box">
+          <p class="box-title">Harga rata-rata tertinggi</p>
+          <h2 class="box-value red-text">Rp 98.000</h2>
+        </div>
+      </div>
+
+      <div class="market-table-section card">
+        <div class="table-controls">
+          <div class="search-box-large">
+            <i class='bx bx-search'></i>
+            <input type="text" placeholder="Search nama pesaing atau varian...">
+          </div>
+          <div class="filter-wrapper">
+            <button class="btn-sort" id="btnFilterToggle">Urut: terbaru <i class='bx bx-chevron-down'></i></button>
+            <div class="filter-popup" id="filterPopup">
+              <h3 class="filter-title">Atur Filter</h3>
+              
+              <div class="filter-group">
+                <div class="filter-header">
+                  <h4>Urutkan Berdasarkan</h4>
+                  <i class='bx bx-chevron-up'></i>
+                </div>
+                <div class="filter-select-wrapper">
+                  <select class="filter-select-box">
+                    <option>Terbaru</option>
+                    <option>Terlama</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <div class="filter-header">
+                  <h4>Varian Rasa</h4>
+                  <i class='bx bx-chevron-up'></i>
+                </div>
+                <div class="checkbox-list">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Ayam Bawang
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Soto
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Goreng
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Kari
+                  </label>
+                </div>
+                <div class="filter-search-box">
+                  <i class='bx bx-search'></i>
+                  <input type="text" placeholder="Cari Varian Rasa">
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <div class="filter-header">
+                  <h4>Pesaing</h4>
+                  <i class='bx bx-chevron-up'></i>
+                </div>
+                <div class="checkbox-list">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Sedaap
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Sarimi
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Supermi
+                  </label>
+                </div>
+                <div class="filter-search-box">
+                  <i class='bx bx-search'></i>
+                  <input type="text" placeholder="Cari Pesaing">
+                </div>
+              </div>
+
+              <div class="filter-group">
+                <div class="filter-header">
+                  <h4>Keunggulan Promo</h4>
+                  <i class='bx bx-chevron-up'></i>
+                </div>
+                <div class="checkbox-list">
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Bundling
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox" checked>
+                    <span class="checkmark"></span>
+                    Cashback
+                  </label>
+                  <label class="custom-checkbox">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Free Ongkir
+                  </label>
+                </div>
+              </div>
+
+              <div class="filter-actions">
+                <button class="btn-apply-filter">Terapkan Filter</button>
+                <button class="btn-clear-filter">Hapus semua filter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="market-table">
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Nama Pesaing</th>
+                <th>Varian Rasa</th>
+                <th>Harga/Karton</th>
+                <th>Keunggulan Promo</th>
+                <th>Dicatat</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Sedaap</td>
+                <td>Ayam Bawang, Soto</td>
+                <td>Rp 85.000</td>
+                <td><span class="badge badge-green">Bundling + Cashback 10%</span></td>
+                <td>19 Mei 2026</td>
+                <td><button class="btn-icon"><i class='bx bx-chevron-down'></i></button></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Sarimi</td>
+                <td>Soto, Ayam Bawang</td>
+                <td>Rp 98.000</td>
+                <td><span class="badge badge-blue">Free Ongkir min. 2 Karton</span></td>
+                <td>17 Mei 2026</td>
+                <td><button class="btn-icon"><i class='bx bx-chevron-down'></i></button></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Supermi</td>
+                <td>Goreng, Kari</td>
+                <td>Rp 75.000</td>
+                <td><span class="badge badge-red">Diskon 15% Grosir</span></td>
+                <td>15 Mei 2026</td>
+                <td><button class="btn-icon"><i class='bx bx-chevron-down'></i></button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="action-footer">
+        <button class="btn-add-primary" id="btnShowAddForm"><i class='bx bx-plus'></i> Tambah Data Pesaing</button>
+      </div>
+      </div>
+
+      <div id="marketAddFormView" style="display: none;">
+        <div class="page-header">
+          <h1>Market Intelligence</h1>
+          <p class="subtitle" style="font-weight: 500; margin-top: 4px;">Form Analisa Pesaing</p>
+        </div>
+
+        <div class="form-card card">
+          <div class="card-banner">
+            <h3>Data Pesaing</h3>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Nama Pesaing</label>
+              <input type="text" class="form-input" placeholder="cth: Mie Sedaap">
+            </div>
+            <div class="form-group">
+              <label>Varian Rasa</label>
+              <input type="text" class="form-input" placeholder="cth: Ayam Bawang, Goreng">
+            </div>
+            <div class="form-group">
+              <label>Harga Pasar per Karton (Rp)</label>
+              <input type="text" class="form-input" placeholder="cth: 90000">
+            </div>
+            <div class="form-group">
+              <label>Keunggulan Promo</label>
+              <input type="text" class="form-input" placeholder="cth: Bundling, Cashback">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card card mt-24">
+          <div class="card-banner">
+            <h3>Rekomendasi Strategi</h3>
+          </div>
+          <div class="form-group single-col">
+            <label>Catatan & Rekomendasi Strategi</label>
+            <textarea class="form-textarea" placeholder="cth: Buat promo bundling bulan depan untuk menandingi harga pesaing..."></textarea>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-reset" id="btnCancelAdd">Reset Filter</button>
+          <button class="btn-save" id="btnSaveData">Simpan Data</button>
+        </div>
+      </div>
+
+      <!-- SUCCESS VIEW -->
+      <div id="marketSuccessView" style="display: none;">
+        <div class="page-header">
+          <h1>Market Intelligence</h1>
+          <p class="subtitle" style="font-weight: 500; margin-top: 4px;">Form Analisa Pesaing</p>
+        </div>
+
+        <div class="card" style="background: transparent; padding: 0; box-shadow: none;">
+          <div class="success-banner">
+            <div class="s-banner-left">
+              <div class="s-icon-doc"><i class='bx bx-file-blank'></i></div>
+              <div class="s-banner-text">
+                <h3>Data Analisa Pesaing Berhasil Disimpan</h3>
+                <p>Digenerate 18 Mei 2026, 10:47 - 2 halaman - 294 KB</p>
+              </div>
+            </div>
+            <div class="s-banner-right" id="btnSuccessNextPage">
+              <span>next page <i class='bx bx-chevron-right-circle'></i></span>
+            </div>
+          </div>
+
+          <div class="success-content">
+            <h2>Ringkasan Data Tersimpan</h2>
+
+            <div class="summary-list">
+              <div class="s-row">
+                <span class="s-label">Nama Pesaing</span>
+                <span class="s-value">Mie Sedaap</span>
+              </div>
+              <div class="s-row">
+                <span class="s-label">Varian Rasa</span>
+                <span class="s-value">Ayam Bawang, Goreng</span>
+              </div>
+              <div class="s-row">
+                <span class="s-label">Harga per Karton (Rp)</span>
+                <span class="s-value">Rp 90.000</span>
+              </div>
+              <div class="s-row">
+                <span class="s-label">Keunggulan Promo</span>
+                <span class="s-value">Bundling + Cashback 10%</span>
+              </div>
+              <div class="s-row">
+                <span class="s-label">Rekomendasi Strategi</span>
+                <span class="s-value text-muted">Buat promo bundling bulan depan untuk menandingi harga pesaing</span>
+              </div>
+            </div>
+
+            <h3 class="info-title">Info Penyimpanan</h3>
+
+            <div class="info-grid">
+              <div class="i-col">
+                <p class="i-label">Disimpan oleh</p>
+                <p class="i-value">Manajer Marketing</p>
+              </div>
+              <div class="i-col">
+                <p class="i-label">Tipe data</p>
+                <p class="i-value">Data teks biasa</p>
+              </div>
+              <div class="i-col">
+                <p class="i-label">Lokasi penyimpanan</p>
+                <p class="i-value">Database Analitik</p>
+              </div>
+              <div class="i-col">
+                <p class="i-label">Status</p>
+                <p class="i-value text-green">Tersimpan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn-outline-dark" id="btnSuccessAddMore">Tambah data pesaing <i class='bx bx-plus'></i></button>
+            <button class="btn-primary" id="btnSuccessViewAll">Lihat semua data</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/market.js?v=2"></script>
+</body>
+</html>

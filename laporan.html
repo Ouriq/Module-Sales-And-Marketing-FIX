@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Penjualan – Indofood</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="css/laporan.css?v=2" />
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/images/logo.png" alt="Logo Indofood" class="logo-img" />
+      </div>
+
+      <p class="menu-label">MENU</p>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <img src="assets/images/dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+        </a>
+        <a href="pelanggan.html" class="nav-item">
+          <img src="assets/images/dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+        </a>
+        <a href="sales.html" class="nav-item">
+          <img src="assets/images/soicon.png" alt="Sales" class="nav-icon"> Sales Order
+        </a>
+        <a href="promo.html" class="nav-item">
+          <img src="assets/images/mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+        </a>
+        <a href="kampanye.html" class="nav-item">
+          <img src="assets/images/speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+        </a>
+        <a href="market.html" class="nav-item">
+          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> <span>Market Intelligence</span>
+        </a>
+        <a href="laporan.html" class="nav-item active">
+          <img src="assets/images/laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
+        <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <input type="text" placeholder="Search...">
+        </div>
+        <div class="topbar-right">
+          <div class="settings-wrapper">
+            <button class="icon-btn" id="btnSettingsToggle">
+              <i class='bx bx-cog'></i>
+            </button>
+
+            <div class="settings-popup" id="settingsPopup">
+              <h3 class="settings-title">Pengaturan</h3>
+              
+              <div class="settings-list">
+                <a href="profil.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-user'></i></div>
+                  <div class="s-text">
+                    <h4>Profil Saya</h4>
+                    <p>Kelola informasi akun Anda</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+                
+                
+
+                
+
+                <a href="keamanan.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-lock-alt'></i></div>
+                  <div class="s-text">
+                    <h4>Keamanan</h4>
+                    <p>Ubah password & keamanan akun</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+
+                <hr class="s-divider">
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-globe'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Bahasa</h4>
+                  </div>
+                  <div class="s-action-text">Indonesia <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-sun'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Tema</h4>
+                  </div>
+                  <div class="s-action-text">Light <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <hr class="s-divider">
+
+                <div class="settings-item logout-item" id="settingsLogoutBtn">
+                  <div class="s-icon"><i class='bx bx-log-out'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Logout</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="notification-wrapper">
+            <button class="icon-btn" id="btnNotifToggle">
+              <i class='bx bx-bell'></i>
+            </button>
+            <div class="notif-popup" id="notifPopup">
+              <div class="notif-header">
+                <h3>Notifikasi</h3>
+                <a href="#" class="notif-mark-read">Mark all as read</a>
+              </div>
+              <div class="notif-list">
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #E0E7FF; color: #4F46E5;">
+                    <i class='bx bx-shopping-bag'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Pesanan baru #SO-250524</h4>
+                    <p>Dari Toko Maju Jaya</p>
+                    <span class="notif-time">5 menit yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+              </div>
+              <div class="notif-footer">
+                <a href="#" class="notif-view-all">Lihat semua notifikasi</a>
+                <i class='bx bx-chevron-right'></i>
+              </div>
+            </div>
+          </div>
+          
+          <a href="profil.html" class="user-profile" style="text-decoration: none; color: inherit;">
+            <div class="user-info">
+              <span class="user-name" id="userNameDisplay">Nilam</span>
+              <span class="user-role">Sales & Marketing Manager</span>
+            </div>
+            <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
+          </a>
+        </div>
+      </header>
+
+      <div class="page-header">
+        <h1>Laporan Penjualan</h1>
+        <p class="subtitle" style="font-weight: 500; margin-top: 4px;">Sales Report Generator</p>
+      </div>
+
+      <div class="card laporan-filter-card">
+        <div class="card-banner">
+          <h3>Parameter Filter Laporan</h3>
+        </div>
+        <div class="filter-grid">
+          <div class="filter-group">
+            <label>Periode Tanggal - dari</label>
+            <div class="input-with-icon">
+              <input type="text" class="form-input" value="04/01/2026">
+              <i class='bx bx-calendar'></i>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Periode Tanggal - hingga</label>
+            <div class="input-with-icon">
+              <input type="text" class="form-input" value="04/31/2026">
+              <i class='bx bx-calendar'></i>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Wilayah</label>
+            <div class="select-wrapper">
+              <select class="form-input">
+                <option>Semua Wilayah</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Jenis Varian Produk</label>
+            <div class="select-wrapper">
+              <select class="form-input">
+                <option>Semua Varian</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Status Transaksi</label>
+            <div class="select-wrapper">
+              <select class="form-input">
+                <option>Valid</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label>Format Laporan</label>
+            <div class="select-wrapper">
+              <select class="form-input">
+                <option>PDF + Excel</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-actions border-top">
+          <button class="btn-reset">Reset Filter</button>
+          <button class="btn-save">Generate Laporan</button>
+        </div>
+      </div>
+
+      <h2 class="section-title">Preview Laporan Resmi</h2>
+
+      <div class="preview-banner">
+        <div class="s-banner-left">
+          <div class="s-icon-doc"><i class='bx bx-file-blank'></i></div>
+          <div class="s-banner-text">
+            <h3>Laporan_Penjualan_Apr2026_SemuaWilayah.pdf</h3>
+            <p>Digenerate 18 Mei 2026, 10:47 - 2 halaman - 294 KB</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="a4-preview">
+        <div class="a4-header">
+          <div class="a4-logo-area">
+            <h2>PT. INDOFOOD TBK</h2>
+            <img src="assets/images/logo.png" alt="Indofood" style="height: 30px; margin-top: 8px;">
+          </div>
+          <div class="a4-doc-details">
+            <p>No. Dok: <strong>IDN-2026-04-001</strong></p>
+            <p>Periode: <strong>1-30 April 2026</strong></p>
+            <p>Wilayah: <strong>Semua Wilayah</strong></p>
+            <p>Varian: <strong>Semua Varian</strong></p>
+            <p>Status: <strong>Valid</strong></p>
+          </div>
+        </div>
+
+        <div class="a4-title-banner">
+          LAPORAN PENJUALAN - SALES ORDER REPORT - APRIL 2026
+        </div>
+
+        <div class="a4-summary-boxes">
+          <div class="a4-s-box">
+            <span class="a4-s-label">Total SO</span>
+            <span class="a4-s-val">1.100</span>
+          </div>
+          <div class="a4-s-box">
+            <span class="a4-s-label">Total Nilai</span>
+            <span class="a4-s-val">Rp 4.7M</span>
+          </div>
+          <div class="a4-s-box">
+            <span class="a4-s-label">Rata-Rata SO</span>
+            <span class="a4-s-val">Rp 3.6 jt</span>
+          </div>
+          <div class="a4-s-box">
+            <span class="a4-s-label">Transaksi Valid</span>
+            <span class="a4-s-val">98,2%</span>
+          </div>
+        </div>
+
+        <table class="a4-table">
+          <thead>
+            <tr>
+              <th>No. SO</th>
+              <th>Tanggal</th>
+              <th>Pelanggan</th>
+              <th>Wilayah</th>
+              <th>Varian</th>
+              <th style="text-align: right;">Harga (Rp)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SO-2026-04-0001</td>
+              <td>01 Apr 2026</td>
+              <td>PT. SuperIndo</td>
+              <td>Jawa Barat</td>
+              <td>Indomie Goreng</td>
+              <td style="text-align: right;">4.250.000</td>
+            </tr>
+            <tr>
+              <td>SO-2026-04-0002</td>
+              <td>02 Apr 2026</td>
+              <td>PT. SuperIndo</td>
+              <td>Jawa Barat</td>
+              <td>Indomie Soto</td>
+              <td style="text-align: right;">10.000.000</td>
+            </tr>
+            <tr>
+              <td>SO-2026-04-0003</td>
+              <td>03 Apr 2026</td>
+              <td>PT. SuperIndo</td>
+              <td>Jawa Barat</td>
+              <td>Indomie Kari Ayam</td>
+              <td style="text-align: right;">9.890.000</td>
+            </tr>
+            <tr>
+              <td>SO-2026-04-0004</td>
+              <td>04 Apr 2026</td>
+              <td>PT. Alfamart</td>
+              <td>Maluku Utara</td>
+              <td>Indomie Soto</td>
+              <td style="text-align: right;">8.590.000</td>
+            </tr>
+            <tr>
+              <td>SO-2026-04-0005</td>
+              <td>05 Apr 2026</td>
+              <td>PT. Indomaret</td>
+              <td>Bali</td>
+              <td>Indomie Goreng</td>
+              <td style="text-align: right;">15.799.000</td>
+            </tr>
+            <tr>
+              <td>SO-2026-04-0006</td>
+              <td>06 Apr 2026</td>
+              <td>PT. SelaluJaya</td>
+              <td>Sumatera</td>
+              <td>Indomie Goreng</td>
+              <td style="text-align: right;">21.390.000</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="a4-totals">
+          <div class="a4-t-left">Subtotal hal. 1</div>
+          <div class="a4-t-right">
+            <span>6 dari 1.100 transaksi</span>
+            <strong>Rp 58.900.000</strong>
+          </div>
+        </div>
+
+        <div class="a4-footer">
+          <div class="a4-f-left">PT. INDOFOOD TBK</div>
+          <div class="a4-f-right">halaman 1 dari 2</div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Opsi Unduh Dokumen Laporan</h2>
+
+      <div class="download-options">
+        <div class="dl-card">
+          <div class="dl-icon" style="color: #DC2626; background: #FEE2E2;"><i class='bx bxs-file-pdf'></i></div>
+          <div class="dl-info">
+            <h4>PDF Document</h4>
+            <p>Format dokumen resmi, siap cetak & distribusi</p>
+            <span class="dl-meta">294 KB - Laporan_Penjualan_Apr2026_SemuaWilayah.pdf</span>
+          </div>
+        </div>
+        <div class="dl-card">
+          <div class="dl-icon" style="color: #16A34A; background: #DCFCE7;"><i class='bx bx-file-blank'></i></div>
+          <div class="dl-info">
+            <h4>Excel Spreadsheet</h4>
+            <p>Data mentah untuk analisis lanjutan</p>
+            <span class="dl-meta">414 KB - Laporan_Penjualan_Apr2026_SemuaWilayah.xlsx</span>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/laporan.js?v=2"></script>
+</body>
+</html>

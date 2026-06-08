@@ -112,7 +112,7 @@ form.addEventListener('submit', async (e) => {
   clearAlert();
 
   const email    = emailInput.value.trim().toLowerCase();
-  const password = pwdInput.value;
+  const password = pwdInput.value.trim();
   const remember = document.getElementById('remember').checked;
   let valid = true;
 

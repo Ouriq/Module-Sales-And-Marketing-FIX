@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard – Indofood Sales Marketing</title>
+  <title>Keamanan – Indofood</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
-  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/keamanan.css?v=1" />
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
       <p class="menu-label">MENU</p>
       <nav class="sidebar-nav">
-        <a href="dashboard.html" class="nav-item active">
+        <a href="dashboard.html" class="nav-item">
           <img src="assets/images/dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
         </a>
         <a href="pelanggan.html" class="nav-item">
@@ -36,8 +36,7 @@
           <img src="assets/images/speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
         </a>
         <a href="market.html" class="nav-item">
-          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> 
-          <span>Market Intelligence</span>
+          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> <span>Market Intelligence</span>
         </a>
         <a href="laporan.html" class="nav-item">
           <img src="assets/images/laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
@@ -45,16 +44,18 @@
       </nav>
 
       <div class="sidebar-footer">
-        <a href="#" class="nav-item help-link"><i class='bx bx-help-circle'></i> Help Center</a>
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
         <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
       </div>
     </aside>
 
     <main class="main-content">
       <header class="topbar">
-        <div class="search-box">
+        <div class="search-box" style="visibility: hidden;">
           <i class='bx bx-search'></i>
-          <input type="text" placeholder="Search employee or data...">
+          <input type="text" placeholder="Search data...">
         </div>
         <div class="topbar-right">
           <div class="settings-wrapper">
@@ -141,39 +142,6 @@
                   </div>
                   <div class="notif-unread-dot"></div>
                 </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #DCFCE7; color: #16A34A;">
-                    <i class='bx bx-line-chart'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Laporan penjualan harian</h4>
-                    <p>Sudah tersedia untuk dilihat</p>
-                    <span class="notif-time">30 menit yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #F3E8FF; color: #9333EA;">
-                    <i class='bx bx-volume-full'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Promo baru "Ramadan Ceria"</h4>
-                    <p>Telah aktif di 12 kota</p>
-                    <span class="notif-time">1 jam yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #FFEDD5; color: #EA580C;">
-                    <i class='bx bx-error'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Stok varian Mie Goreng</h4>
-                    <p>Tersisa di bawah 20%</p>
-                    <span class="notif-time">2 jam yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
               </div>
               <div class="notif-footer">
                 <a href="#" class="notif-view-all">Lihat semua notifikasi</a>
@@ -193,69 +161,34 @@
       </header>
 
       <div class="page-header">
-        <h1 id="greetingText">Selamat Datang, Nilam</h1>
-        <p class="date-text"><span id="currentDate">Senin, 24 Mei 2026</span> &nbsp;|&nbsp; Sales Marketing System Dashboard</p>
+        <h1>Keamanan</h1>
+        <p class="subtitle" style="font-weight: 500; margin-top: 4px; color: #6B7280; font-size: 14px;">Pastikan akun Anda tetap aman</p>
       </div>
 
-      <div class="dashboard-grid">
+      <div class="card security-card" style="padding: 32px; margin-top: 24px;">
+        <h3 class="security-card-title" style="font-size: 18px; font-weight: 800; margin-bottom: 24px;">Ubah Password</h3>
         
-        <div class="card card-blue card-income">
-          <div class="card-icon-blue"><i class='bx bx-money-withdraw'></i></div>
-          <p class="card-title-light">Total Income</p>
-          <h2 class="card-value-light">Rp 1.413.087,00</h2>
-        </div>
-
-        <div class="card card-karton">
-          <div class="karton-header">
-            <div class="card-icon-light"><i class='bx bx-package'></i></div>
-            <span class="badge-success">+12.13%</span>
+        <div class="security-form" style="display: flex; flex-direction: column; gap: 24px; max-width: 100%;">
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 14px; font-weight: 700;">Password Saat Ini</label>
+            <input type="password" class="form-input" style="background-color: #FAFAFA; border: 1px solid #E5E7EB;" placeholder="Masukkan password saat ini">
           </div>
-          <p class="card-title-dark">Total Karton Terjual</p>
-          <h2 class="card-value-dark">1.314</h2>
-        </div>
-
-        <div class="card card-chart-bar">
-          <div class="card-header-flex">
-            <h3 class="card-title-bold">Pendapatan Per Bulan</h3>
-            <select class="filter-select">
-              <option>This Year</option>
-              <option>Last Year</option>
-            </select>
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 14px; font-weight: 700;">Password Baru</label>
+            <input type="password" class="form-input" style="background-color: #FAFAFA; border: 1px solid #E5E7EB;" placeholder="Masukkan password baru">
           </div>
-          <div class="chart-container">
-            <canvas id="revenueChart"></canvas>
-          </div>
-        </div>
-
-        <div class="card card-varian">
-          <div class="card-header-flex">
-            <h3 class="card-title-bold">Varian Terlaris</h3>
-            <select class="filter-select">
-              <option>Today</option>
-              <option>This Week</option>
-            </select>
+          <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <label style="font-size: 14px; font-weight: 700;">Konfirmasi Password Baru</label>
+            <input type="password" class="form-input" style="background-color: #FAFAFA; border: 1px solid #E5E7EB;" placeholder="Konfirmasi password baru">
           </div>
           
-          <div class="varian-content">
-            <ul class="varian-legend">
-              <li><span class="dot dot-blue"></span> Mie Goreng</li>
-              <li><span class="dot dot-green"></span> Mie Soto</li>
-              <li><span class="dot dot-orange"></span> Mie Kari Ayam</li>
-            </ul>
-            
-            <div class="bubble-chart">
-              <div class="bubble bubble-blue"><span>60%</span></div>
-              <div class="bubble bubble-green"><span>25%</span></div>
-              <div class="bubble bubble-orange"><span>15%</span></div>
-            </div>
-          </div>
+          <button class="btn-primary" style="margin-top: 8px; width: 100%; border-radius: 8px; padding: 14px; background-color: #0D47A1;">Ubah Password</button>
         </div>
-
       </div>
+
     </main>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/dashboard.js"></script>
+  <script src="js/keamanan.js?v=1"></script>
 </body>
 </html>

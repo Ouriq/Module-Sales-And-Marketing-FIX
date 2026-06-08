@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard – Indofood Sales Marketing</title>
+  <title>Profil Saya – Indofood</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
-  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/profil.css?v=1" />
 </head>
 <body>
 
@@ -20,7 +20,7 @@
 
       <p class="menu-label">MENU</p>
       <nav class="sidebar-nav">
-        <a href="dashboard.html" class="nav-item active">
+        <a href="dashboard.html" class="nav-item">
           <img src="assets/images/dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
         </a>
         <a href="pelanggan.html" class="nav-item">
@@ -36,8 +36,7 @@
           <img src="assets/images/speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
         </a>
         <a href="market.html" class="nav-item">
-          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> 
-          <span>Market Intelligence</span>
+          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> <span>Market Intelligence</span>
         </a>
         <a href="laporan.html" class="nav-item">
           <img src="assets/images/laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
@@ -45,16 +44,18 @@
       </nav>
 
       <div class="sidebar-footer">
-        <a href="#" class="nav-item help-link"><i class='bx bx-help-circle'></i> Help Center</a>
+        <a href="#" class="nav-item help-link">
+          <i class='bx bx-help-circle' style="font-size: 20px; color: var(--text-muted);"></i> <span>Help Center</span>
+        </a>
         <button id="logoutBtn" class="btn-logout"><i class='bx bx-log-out'></i> Logout</button>
       </div>
     </aside>
 
     <main class="main-content">
       <header class="topbar">
-        <div class="search-box">
+        <div class="search-box" style="visibility: hidden;">
           <i class='bx bx-search'></i>
-          <input type="text" placeholder="Search employee or data...">
+          <input type="text" placeholder="Search data...">
         </div>
         <div class="topbar-right">
           <div class="settings-wrapper">
@@ -141,39 +142,6 @@
                   </div>
                   <div class="notif-unread-dot"></div>
                 </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #DCFCE7; color: #16A34A;">
-                    <i class='bx bx-line-chart'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Laporan penjualan harian</h4>
-                    <p>Sudah tersedia untuk dilihat</p>
-                    <span class="notif-time">30 menit yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #F3E8FF; color: #9333EA;">
-                    <i class='bx bx-volume-full'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Promo baru "Ramadan Ceria"</h4>
-                    <p>Telah aktif di 12 kota</p>
-                    <span class="notif-time">1 jam yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
-                <div class="notif-item">
-                  <div class="notif-icon" style="background-color: #FFEDD5; color: #EA580C;">
-                    <i class='bx bx-error'></i>
-                  </div>
-                  <div class="notif-content">
-                    <h4>Stok varian Mie Goreng</h4>
-                    <p>Tersisa di bawah 20%</p>
-                    <span class="notif-time">2 jam yang lalu</span>
-                  </div>
-                  <div class="notif-unread-dot"></div>
-                </div>
               </div>
               <div class="notif-footer">
                 <a href="#" class="notif-view-all">Lihat semua notifikasi</a>
@@ -193,69 +161,109 @@
       </header>
 
       <div class="page-header">
-        <h1 id="greetingText">Selamat Datang, Nilam</h1>
-        <p class="date-text"><span id="currentDate">Senin, 24 Mei 2026</span> &nbsp;|&nbsp; Sales Marketing System Dashboard</p>
+        <h1>Profil Saya</h1>
       </div>
 
-      <div class="dashboard-grid">
-        
-        <div class="card card-blue card-income">
-          <div class="card-icon-blue"><i class='bx bx-money-withdraw'></i></div>
-          <p class="card-title-light">Total Income</p>
-          <h2 class="card-value-light">Rp 1.413.087,00</h2>
-        </div>
-
-        <div class="card card-karton">
-          <div class="karton-header">
-            <div class="card-icon-light"><i class='bx bx-package'></i></div>
-            <span class="badge-success">+12.13%</span>
-          </div>
-          <p class="card-title-dark">Total Karton Terjual</p>
-          <h2 class="card-value-dark">1.314</h2>
-        </div>
-
-        <div class="card card-chart-bar">
-          <div class="card-header-flex">
-            <h3 class="card-title-bold">Pendapatan Per Bulan</h3>
-            <select class="filter-select">
-              <option>This Year</option>
-              <option>Last Year</option>
-            </select>
-          </div>
-          <div class="chart-container">
-            <canvas id="revenueChart"></canvas>
-          </div>
-        </div>
-
-        <div class="card card-varian">
-          <div class="card-header-flex">
-            <h3 class="card-title-bold">Varian Terlaris</h3>
-            <select class="filter-select">
-              <option>Today</option>
-              <option>This Week</option>
-            </select>
-          </div>
+      <div id="profileDisplayView">
+        <div class="card profile-card">
+          <h3 class="profile-card-title">Informasi Pribadi</h3>
           
-          <div class="varian-content">
-            <ul class="varian-legend">
-              <li><span class="dot dot-blue"></span> Mie Goreng</li>
-              <li><span class="dot dot-green"></span> Mie Soto</li>
-              <li><span class="dot dot-orange"></span> Mie Kari Ayam</li>
-            </ul>
+          <div class="profile-grid">
+            <div class="profile-avatar-section">
+              <div class="big-avatar"></div>
+              <button class="btn-change-photo">Ubah Foto</button>
+            </div>
             
-            <div class="bubble-chart">
-              <div class="bubble bubble-blue"><span>60%</span></div>
-              <div class="bubble bubble-green"><span>25%</span></div>
-              <div class="bubble bubble-orange"><span>15%</span></div>
+            <div class="profile-info-section">
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>Nama Lengkap</label>
+                  <p id="displayProfileName">Nilam</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>Email</label>
+                  <p id="displayProfileEmail">nilam@indofood.co.id</p>
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>No. Telpon</label>
+                  <p id="displayProfilePhone">0812 - 3456 - 7890</p>
+                </div>
+              </div>
+              <div class="info-row split-row">
+                <div class="info-group">
+                  <label>Departemen</label>
+                  <p id="displayProfileDept">Sales & Marketing</p>
+                </div>
+                <div class="info-group">
+                  <label>Jabatan</label>
+                  <p id="displayProfileRole">Sales & Marketing Manager</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
+        <div class="profile-actions-footer">
+          <button class="btn-edit-profile" id="btnEditProfile">Edit Profil</button>
+        </div>
       </div>
+
+      <div id="profileEditView" style="display: none;">
+        <div class="card profile-card">
+          <h3 class="profile-card-title">Edit Informasi Pribadi</h3>
+          
+          <div class="profile-grid">
+            <div class="profile-avatar-section">
+              <div class="big-avatar"></div>
+              <button class="btn-change-photo">Ubah Foto</button>
+            </div>
+            
+            <div class="profile-info-section">
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>Nama Lengkap</label>
+                  <input type="text" id="editProfileName" class="form-input" value="Nilam">
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>Email</label>
+                  <input type="email" id="editProfileEmail" class="form-input" value="nilam@indofood.co.id">
+                </div>
+              </div>
+              <div class="info-row">
+                <div class="info-group full-width">
+                  <label>No. Telpon</label>
+                  <input type="text" id="editProfilePhone" class="form-input" value="0812 - 3456 - 7890">
+                </div>
+              </div>
+              <div class="info-row split-row">
+                <div class="info-group">
+                  <label>Departemen</label>
+                  <input type="text" id="editProfileDept" class="form-input" value="Sales & Marketing">
+                </div>
+                <div class="info-group">
+                  <label>Jabatan</label>
+                  <input type="text" id="editProfileRole" class="form-input" value="Sales & Marketing Manager">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-actions-footer" style="gap: 16px;">
+          <button class="btn-reset" id="btnCancelEdit">Batal</button>
+          <button class="btn-save" id="btnSaveProfile">Simpan Perubahan</button>
+        </div>
+      </div>
+
     </main>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="js/dashboard.js"></script>
+  <script src="js/profil.js?v=1"></script>
 </body>
 </html>

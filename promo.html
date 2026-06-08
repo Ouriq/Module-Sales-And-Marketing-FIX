@@ -8,38 +8,38 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
-  <link rel="stylesheet" href="promo.css" />
+  <link rel="stylesheet" href="css/promo.css" />
 </head>
 <body>
 
   <div class="layout">
     <aside class="sidebar">
       <div class="sidebar-logo">
-        <img src="logo.png" alt="Logo Indofood" class="logo-img" />
+        <img src="assets/images/logo.png" alt="Logo Indofood" class="logo-img" />
       </div>
 
       <p class="menu-label">MENU</p>
       <nav class="sidebar-nav">
         <a href="dashboard.html" class="nav-item">
-          <img src="dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
+          <img src="assets/images/dasboardicon.png" alt="Dashboard" class="nav-icon"> Dashboard
         </a>
         <a href="pelanggan.html" class="nav-item">
-          <img src="dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
+          <img src="assets/images/dataicon.png" alt="Pelanggan" class="nav-icon"> Manajemen Data Pelanggan
         </a>
         <a href="sales.html" class="nav-item">
-          <img src="soicon.png" alt="Sales" class="nav-icon"> Sales Order
+          <img src="assets/images/soicon.png" alt="Sales" class="nav-icon"> Sales Order
         </a>
         <a href="promo.html" class="nav-item active">
-          <img src="mastericon.png" alt="Promo" class="nav-icon"> Master Promo
+          <img src="assets/images/mastericon.png" alt="Promo" class="nav-icon"> Master Promo
         </a>
         <a href="kampanye.html" class="nav-item">
-          <img src="speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
+          <img src="assets/images/speaker.png" alt="Kampanye" class="nav-icon"> Kampanye Marketing
         </a>
-        <a href="#" class="nav-item">
-          <img src="marketicon.png" alt="Market" class="nav-icon"> Market Intelligence
+        <a href="market.html" class="nav-item">
+          <img src="assets/images/marketicon.png" alt="Market" class="nav-icon"> Market Intelligence
         </a>
-        <a href="#" class="nav-item">
-          <img src="laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
+        <a href="laporan.html" class="nav-item">
+          <img src="assets/images/laporanicon.png" alt="Laporan" class="nav-icon"> Laporan Penjualan
         </a>
       </nav>
 
@@ -58,15 +58,139 @@
           <input type="text" placeholder="Search data...">
         </div>
         <div class="topbar-right">
-          <button class="icon-btn"><i class='bx bx-cog'></i></button>
-          <button class="icon-btn"><i class='bx bx-bell'></i></button>
-          <div class="user-profile">
+          
+          <div class="settings-wrapper">
+            <button class="icon-btn" id="btnSettingsToggle">
+              <i class='bx bx-cog'></i>
+            </button>
+
+            <div class="settings-popup" id="settingsPopup">
+              <h3 class="settings-title">Pengaturan</h3>
+              
+              <div class="settings-list">
+                <a href="profil.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-user'></i></div>
+                  <div class="s-text">
+                    <h4>Profil Saya</h4>
+                    <p>Kelola informasi akun Anda</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+                
+                
+
+                
+
+                <a href="keamanan.html" class="settings-item" style="text-decoration: none; color: inherit; display: flex;">
+                  <div class="s-icon"><i class='bx bx-lock-alt'></i></div>
+                  <div class="s-text">
+                    <h4>Keamanan</h4>
+                    <p>Ubah password & keamanan akun</p>
+                  </div>
+                  <i class='bx bx-chevron-right s-arrow'></i>
+                </a>
+
+                <hr class="s-divider">
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-globe'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Bahasa</h4>
+                  </div>
+                  <div class="s-action-text">Indonesia <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <div class="settings-item">
+                  <div class="s-icon"><i class='bx bx-sun'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Tema</h4>
+                  </div>
+                  <div class="s-action-text">Light <i class='bx bx-chevron-down'></i></div>
+                </div>
+
+                <hr class="s-divider">
+
+                <div class="settings-item logout-item" id="settingsLogoutBtn">
+                  <div class="s-icon"><i class='bx bx-log-out'></i></div>
+                  <div class="s-text">
+                    <h4 class="single-line">Logout</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+                    <!-- WRAPPER NOTIFIKASI -->
+          <div class="notification-wrapper">
+            <button class="icon-btn" id="btnNotifToggle">
+              <i class='bx bx-bell'></i>
+            </button>
+
+            <!-- KOTAK POPUP NOTIFIKASI -->
+            <div class="notif-popup" id="notifPopup">
+              <div class="notif-header">
+                <h3>Notifikasi</h3>
+                <a href="#" class="notif-mark-read">Mark all as read</a>
+              </div>
+              <div class="notif-list">
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #E0E7FF; color: #4F46E5;">
+                    <i class='bx bx-shopping-bag'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Pesanan baru #SO-250524</h4>
+                    <p>Dari Toko Maju Jaya</p>
+                    <span class="notif-time">5 menit yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #DCFCE7; color: #16A34A;">
+                    <i class='bx bx-line-chart'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Laporan penjualan harian</h4>
+                    <p>Sudah tersedia untuk dilihat</p>
+                    <span class="notif-time">30 menit yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #F3E8FF; color: #9333EA;">
+                    <i class='bx bx-volume-full'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Promo baru "Ramadan Ceria"</h4>
+                    <p>Telah aktif di 12 kota</p>
+                    <span class="notif-time">1 jam yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+                <div class="notif-item">
+                  <div class="notif-icon" style="background-color: #FFEDD5; color: #EA580C;">
+                    <i class='bx bx-error'></i>
+                  </div>
+                  <div class="notif-content">
+                    <h4>Stok varian Mie Goreng</h4>
+                    <p>Tersisa di bawah 20%</p>
+                    <span class="notif-time">2 jam yang lalu</span>
+                  </div>
+                  <div class="notif-unread-dot"></div>
+                </div>
+              </div>
+              <div class="notif-footer">
+                <a href="#" class="notif-view-all">Lihat semua notifikasi</a>
+                <i class='bx bx-chevron-right'></i>
+              </div>
+            </div>
+          </div>
+          <!-- END WRAPPER NOTIFIKASI -->
+          <a href="profil.html" class="user-profile" style="text-decoration: none; color: inherit;">
             <div class="user-info">
               <span class="user-name" id="userNameDisplay">Nilam</span>
               <span class="user-role">Sales & Marketing Manager</span>
             </div>
             <div class="user-avatar"><i class='bx bx-user-circle'></i></div>
-          </div>
+          </a>
         </div>
       </header>
 
@@ -98,9 +222,111 @@
         <button class="btn-add-promo" id="openModalBtn">
           Add Promo <i class='bx bx-plus'></i>
         </button>
-        <button class="btn-filter">
-          Filter <i class='bx bx-filter'></i>
-        </button>
+        
+        <div class="filter-wrapper">
+          <button class="btn-filter" id="btnFilterToggle">
+            Filter <i class='bx bx-filter'></i>
+          </button>
+
+          <div class="filter-popup" id="filterPopup">
+            <h3 class="filter-title">Atur Filter</h3>
+            
+            <div class="filter-search-box">
+              <i class='bx bx-search'></i>
+              <input type="text" placeholder="Cari Filter">
+            </div>
+
+            <hr class="f-divider">
+
+            <div class="f-section">
+              <div class="f-header">
+                <h4>Status</h4>
+                <i class='bx bx-chevron-up'></i>
+              </div>
+              <div class="f-body">
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark blue-mark"></span> Aktif
+                </label>
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark gray-mark"></span> Draft
+                </label>
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark gray-mark"></span> Non Aktif
+                </label>
+              </div>
+            </div>
+
+            <hr class="f-divider">
+
+            <div class="f-section">
+              <div class="f-header">
+                <h4>Masa Berlaku</h4>
+                <i class='bx bx-chevron-up'></i>
+              </div>
+              <div class="f-body">
+                <div class="f-select-wrapper">
+                  <select class="f-select">
+                    <option>Bulan Ini</option>
+                    <option>Bulan Lalu</option>
+                    <option>Tahun Ini</option>
+                  </select>
+                  <i class='bx bx-chevron-down f-select-icon'></i>
+                </div>
+              </div>
+            </div>
+
+            <hr class="f-divider">
+
+            <div class="f-section">
+              <div class="f-header">
+                <h4>Nilai Diskon</h4>
+                <i class='bx bx-chevron-up'></i>
+              </div>
+              <div class="f-body">
+                <div class="f-slider-container">
+                  <div class="f-slider-track">
+                    <div class="f-slider-thumb left"></div>
+                    <div class="f-slider-thumb right"></div>
+                  </div>
+                  <div class="f-slider-labels">
+                    <span>0%</span>
+                    <span>50%</span>
+                    <span>100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr class="f-divider">
+
+            <div class="f-section">
+              <div class="f-header">
+                <h4>Penggunaan Kuota</h4>
+                <i class='bx bx-chevron-up'></i>
+              </div>
+              <div class="f-body">
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark gray-mark"></span> Belum Digunakan
+                </label>
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark blue-mark"></span> Hampir Habis (>80%)
+                </label>
+                <label class="custom-cb">
+                  <input type="checkbox" checked>
+                  <span class="cb-mark gray-mark"></span> Tersedia
+                </label>
+              </div>
+            </div>
+
+            <hr class="f-divider">
+            <button class="btn-terapkan-filter">Terapkan Filter</button>
+          </div>
+        </div>
       </div>
 
       <div class="card table-card">
@@ -223,6 +449,6 @@
     </div>
   </div>
 
-  <script src="promo.js"></script>
+  <script src="js/promo.js"></script>
 </body>
 </html>

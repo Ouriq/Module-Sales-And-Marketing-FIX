@@ -34,6 +34,9 @@ body {
   /* subtle grid texture */
   background-image: radial-gradient(circle at 1px 1px, rgba(0,63,138,.06) 1px, transparent 0);
   background-size: 28px 28px;
+
+  min-width: 1366px;
+  overflow-x: auto;
 }
 
 /* ─── Header ─────────────────────────────────────────────────── */
@@ -377,4 +380,24 @@ body {
   .card { padding: 36px 24px 30px; }
   .footer { flex-direction: column; align-items: flex-start; }
   .footer-nav { flex-wrap: wrap; gap: 12px; }
+}
+
+
+/* Fix for long names overflowing */
+.user-info {
+  max-width: 180px;
+}
+.user-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.user-role {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
