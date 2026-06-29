@@ -1,4 +1,4 @@
-# Indofood Login & Dashboard
+# FoodSync Login & Dashboard
 
 Aplikasi web statis (HTML/CSS/JS) untuk login dan dashboard Sales Marketing.
 
@@ -18,8 +18,8 @@ Aplikasi web statis (HTML/CSS/JS) untuk login dan dashboard Sales Marketing.
 
 | Email | Password |
 |-------|----------|
-| admin@indofood.com | admin123 |
-| user@indofood.com | user123 |
+| admin@foodsync.com | admin123 |
+| user@foodsync.com | user123 |
 | demo@perusahaan.com | demo123 |
 
 ## Menjalankan Lokal

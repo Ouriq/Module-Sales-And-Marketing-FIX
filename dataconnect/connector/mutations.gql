@@ -1,0 +1,21 @@
+mutation CreateNewUser($uid: String!, $email: String!, $username: String!, $name: String!) {
+  user_insert(
+    data: {
+      id: $uid
+      email: $email
+      username: $username
+      fullName: $name
+    }
+  )
+}
+
+mutation RecordSignInLog($userId: String!, $ip: String, $agent: String, $status: String!) {
+  signInLog_insert(
+    data: {
+      userId: $userId
+      ipAddress: $ip
+      userAgent: $agent
+      status: $status
+    }
+  )
+}

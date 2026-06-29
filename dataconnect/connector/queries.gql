@@ -1,0 +1,27 @@
+query GetUserProfile($uid: String!) {
+  user(id: $uid) {
+    id
+    fullName
+    email
+    username
+    role
+    status
+    createdAt
+  }
+}
+
+query ListAllUsersWithDepartments {
+  users {
+    id
+    fullName
+    role
+    status
+    userDepartments_on_user {
+      assignedAt
+      department {
+        name
+        description
+      }
+    }
+  }
+}

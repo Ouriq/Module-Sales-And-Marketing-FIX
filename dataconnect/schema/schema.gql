@@ -1,0 +1,31 @@
+type User @table {
+  id: String! @col(name: "user_id")
+  email: String! @unique
+  username: String! @unique
+  fullName: String!
+  role: String! @default(value: "GUEST")
+  status: String! @default(value: "ACTIVE")
+  createdAt: Timestamp! @default(expr: "request.time")
+  updatedAt: Timestamp! @default(expr: "request.time")
+}
+
+type SignInLog @table {
+  id: UUID! @default(expr: "uuidV4()")
+  user: User!
+  signInTime: Timestamp! @default(expr: "request.time")
+  ipAddress: String
+  userAgent: String
+  status: String! 
+}
+
+type Department @table {
+  id: UUID! @default(expr: "uuidV4()")
+  name: String! @unique
+  description: String
+}
+
+type UserDepartment @table {
+  user: User!
+  department: Department!
+  assignedAt: Timestamp! @default(expr: "request.time")
+}
